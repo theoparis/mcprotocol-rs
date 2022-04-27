@@ -1,0 +1,27 @@
+[package]
+name = "mcserver-rs"
+version = "0.0.1"
+license = "MIT"
+edition = "2021"
+
+[[bin]]
+name = "mcserver-rs"
+path = "src/main.rs"
+
+[dependencies]
+mcprotocol-rs = { path = "../../crates/core" }
+varint = "0.9.0"
+json = "0.12.4"
+mc-varint = "0.1.1"
+quartz_nbt = "0.2.6"
+hecs = "0.7.6"
+lazy_static = "1.4.0"
+global_counter = "0.2.2"
+
+[dependencies.uuid]
+version = "1.0.0"
+features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+]

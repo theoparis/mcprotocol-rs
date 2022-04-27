@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: instrumentisto/rust:nightly-alpine
+    steps:
+      - checkout
+      - run: apk add --no-cache musl-dev
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy -- -Dwarnings
